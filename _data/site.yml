@@ -1,0 +1,88 @@
+person:
+    name: "Hyukkyu Kang"
+    email_public: "hyukkyukang@gmail.com"
+    links:
+        linkedin: "https://linkedin.com/in/hyukkyu-kang-826171118"
+        scholar: "https://scholar.google.com/citations?user=LsKcmV8AAAAJ"
+        github: "https://github.com/hyukkyukang"
+    summary:
+        - 'I am a Ph.D. Candidate in the <a href="https://dslab.postech.ac.kr/">Data Systems Lab</a> at <a href="https://postech.ac.kr">Pohang University of Science and Technology (POSTECH)</a>. I am doing research under the supervision of Professor <a href="https://wscrony.github.io/">Wook-Shin Han</a>. My research interests are in the area of Natural Language Processing (NLP) and Information Retrieval (IR). I got my B.S. degree in Computer Science and Engineering from POSTECH.'
+    last_updated: "August 2025"
+    communication_languages: ["Korean", "English", "Chinese"]
+
+education:
+    - institution: "Pohang University of Science and Technology (POSTECH)"
+      degree: "Ph.D. in Computer Science and Engineering (M.S./Ph.D. integrated)"
+      period: "Sep. 2019 – Present"
+    - institution: "Pohang University of Science and Technology (POSTECH)"
+      degree: "B.S. in Computer Science and Engineering"
+      period: "Feb. 2015 – Aug. 2019"
+
+work_experience:
+    - title: "Visiting Scholar"
+      org: "Global AI Frontier Lab, New York University"
+      period: "Jan. 2025 – Mar. 2025"
+      bullets:
+          - 'Collaborated with Prof. Kyunghyun Cho on "Disentangling Reasoning and Knowledge in Retrieval-Augmented Language Models."'
+    - title: "Research Intern"
+      org: "Database Lab, POSTECH"
+      period: "Dec. 2018 – Aug. 2019"
+      bullets:
+          - "Researched Natural Language Interface to Databases (NLIDB)."
+    - title: "Research Intern"
+      org: "Center of Netmarble AI Revolution, Netmarble Company"
+      period: "Jun. 2018 – Aug. 2018"
+      bullets:
+          - "Developed AI player for a real-time strategy game using reinforcement learning."
+
+publications:
+    - authors: "Hyukkyu Kang, Injung Kim, Wook-Shin Han"
+      title: "TRIAL: Token Relations and Importance Aware Late-interaction for Accurate Text Retrieval"
+      venue: "Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP) 2025, Main Conference"
+      venue_short: "EMNLP 2025 (Main Conference)"
+      year: 2025
+      date: "Aug. 2025"
+      notes: null
+      links: []
+
+projects:
+    - title: "AI Guardians: Development of Robust, Controllable, and Unbiased Trustworthy AI Technology"
+      sponsor: "IITP (Korea government MSIT), Global AI Frontier Lab (No. RS-2024-00509258)"
+      period: "Jul. 2024 – Present"
+      bullets:
+          - "Developing RAQUEL: Robust Validation of Machine Unlearning through Query Executions over an Aligned Database."
+    - title: "Knowledge Graph Construction for Knowledge Inference"
+      sponsor: "Samsung SDS"
+      period: "May 2020 – Oct. 2020"
+      bullets:
+          - "Developed an end-to-end system to construct knowledge graphs from raw document corpora, structuring domain knowledge for downstream applications."
+    - title: "Development of a Conversational, Self-tuning DBMS"
+      sponsor: "IITP (Korea government MSIT) (No. 2018-0-01398)"
+      period: "Sep. 2019 – Dec. 2024"
+      bullets:
+          - "Built a deep learning–based text-to-SQL semantic parser for natural-language interfaces to DBMS."
+
+activities:
+    - org: "Global Leadership Program (GLP), Computer Vision Lab, POSTECH"
+      period: "Feb. 2017 – Dec. 2017"
+      bullets:
+          - "Researched real-time object detection and tracking."
+    - org: "POSTECH Laboratory for Unix Security (PLUS)"
+      period: "Jun. 2015 – Dec. 2017"
+      bullets:
+          - "Studied Linux system vulnerabilities; participated in CTFs (e.g., DEFCON CTF 2017)."
+
+teaching:
+    - course: "Teaching Assistant for CSED 273 Digital System Design, POSTECH"
+      term: "Spring 2020"
+    - course: "Teaching Assistant for CSED 312 Operating System, POSTECH"
+      term: "Fall 2019"
+
+skills:
+    programming_languages: ["C/C++", "Python", "Scala", "Java", "JavaScript"]
+    libraries_software: ["PyTorch", "TensorFlow", "Databases", "React"]
+
+assets:
+    profile_image: "assets/img/profile.jpg"
+    cv_pdf: "assets/cv/Hyukkyu_Kang_CV.pdf"
+    og_image: "assets/img/og-image.png"

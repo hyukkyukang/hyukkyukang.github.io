@@ -1,0 +1,49 @@
+<!--
+  Sticky in-page navigation with scroll-spy
+  Updates active state based on current section in viewport
+-->
+<nav class="nav" role="navigation" aria-label="Page sections">
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a href="#about" class="nav__link" data-section="about">About</a>
+    </li>
+    {% if site.data.site.education %}
+    <li class="nav__item">
+      <a href="#education" class="nav__link" data-section="education">Education</a>
+    </li>
+    {% endif %}
+    {% if site.data.site.work_experience %}
+    <li class="nav__item">
+      <a href="#experience" class="nav__link" data-section="experience">Experience</a>
+    </li>
+    {% endif %}
+    {% if site.data.site.publications %}
+    <li class="nav__item">
+      <a href="#publications" class="nav__link" data-section="publications">Publications</a>
+    </li>
+    {% endif %}
+    {% if site.data.site.projects %}
+    <li class="nav__item">
+      <a href="#projects" class="nav__link" data-section="projects">Projects</a>
+    </li>
+    {% endif %}
+    {% if site.data.site.activities %}
+    <li class="nav__item">
+      <a href="#activities" class="nav__link" data-section="activities">Activities</a>
+    </li>
+    {% endif %}
+    {% if site.data.site.teaching %}
+    <li class="nav__item">
+      <a href="#teaching" class="nav__link" data-section="teaching">Teaching</a>
+    </li>
+    {% endif %}
+    {% if site.data.site.skills %}
+    <li class="nav__item">
+      <a href="#skills" class="nav__link" data-section="skills">Skills</a>
+    </li>
+    {% endif %}
+    <li class="nav__item">
+      <a href="#contact" class="nav__link" data-section="contact">Contact</a>
+    </li>
+  </ul>
+</nav>

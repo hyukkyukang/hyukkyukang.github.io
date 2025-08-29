@@ -1,0 +1,90 @@
+<!--
+  JSON-LD structured data for Person schema
+  Provides machine-readable information about the person for search engines
+  All data sourced from _data/site.yml
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.data.site.person.name }}",
+  {% if site.data.site.person.email_public %}
+  "email": "{{ site.data.site.person.email_public }}",
+  {% endif %}
+  "affiliation": {
+    "@type": "Organization",
+    "name": "POSTECH Data Systems Lab",
+    "parentOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "Pohang University of Science and Technology (POSTECH)",
+      "url": "{{ site.data.site.person.links.university }}"
+    }
+  },
+  "sameAs": [
+    {% if site.data.site.person.links.homepage %}"{{ site.data.site.person.links.homepage }}",{% endif %}
+    {% if site.data.site.person.links.github %}"{{ site.data.site.person.links.github }}",{% endif %}
+    {% if site.data.site.person.links.scholar %}"{{ site.data.site.person.links.scholar }}",{% endif %}
+    {% if site.data.site.person.links.linkedin %}"{{ site.data.site.person.links.linkedin }}"{% endif %}
+  ],
+  {% if site.data.site.person.links.homepage %}
+  "url": "{{ site.data.site.person.links.homepage }}",
+  {% endif %}
+  "jobTitle": "Ph.D. Candidate",
+  "knowsAbout": [
+    "Natural Language Processing",
+    "Information Retrieval",
+    "Database Systems",
+    "Machine Learning"
+  ],
+  {% if site.data.site.person.communication_languages %}
+  "knowsLanguage": [
+    {% for lang in site.data.site.person.communication_languages %}
+      "{{ lang }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+  {% if site.data.site.assets.profile_image %}
+  "image": "{{ site.url }}{{ site.baseurl }}/{{ site.data.site.assets.profile_image }}",
+  {% endif %}
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Pohang University of Science and Technology (POSTECH)"
+  }
+}
+</script>
+
+<!-- Publications as ScholarlyArticle schema -->
+{% if site.data.site.publications %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {% for pub in site.data.site.publications %}
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "{{ pub.title }}",
+      "author": [
+        {% assign authors = pub.authors | split: ', ' %}
+        {% for author in authors %}
+        {
+          "@type": "Person",
+          "name": "{{ author }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      {% if pub.venue %}
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "{{ pub.venue }}"
+      },
+      {% endif %}
+      {% if pub.year %}
+      "datePublished": "{{ pub.year }}"
+      {% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

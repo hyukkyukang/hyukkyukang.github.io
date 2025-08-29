@@ -1,0 +1,47 @@
+<!--
+  HTML head section with meta tags, Open Graph, Twitter Cards, and SEO
+  Includes JSON-LD structured data and preload hints for performance
+-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- SEO meta tags via jekyll-seo-tag plugin -->
+  {% seo %}
+  
+  <!-- Open Graph and Twitter Card meta -->
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ site.data.site.assets.og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="{{ site.data.site.person.name | split: ' ' | first }}">
+  <meta property="profile:last_name" content="{{ site.data.site.person.name | split: ' ' | last }}">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/{{ site.data.site.assets.og_image }}">
+  
+  <!-- Favicon and app icons -->
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+  <link rel="preload" href="{{ '/assets/js/main.js' | relative_url }}" as="script">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  
+  <!-- Theme detection script (inline to prevent FOUC) -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 
+                   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.classList.remove('no-js');
+    })();
+  </script>
+  
+  <!-- JSON-LD structured data for Person schema -->
+  {% include schema-person.json %}
+</head>

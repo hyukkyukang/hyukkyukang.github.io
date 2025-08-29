@@ -1,0 +1,30 @@
+<!--
+  Site header with simplified navigation
+  Renders person information from _data/site.yml
+-->
+<div class="header">
+    <div class="header__content">
+        <!-- Site name -->
+        <div class="header__title">
+            <h1 class="site__name">{{ site.data.site.person.name }}</h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="header__nav" aria-label="Main navigation">
+            <ul class="header__nav-list">
+                <li class="header__nav-item">
+                    <a href="#about" class="header__nav-link">About</a>
+                </li>
+                <li class="header__nav-item">
+                    <a href="#news" class="header__nav-link">News</a>
+                </li>
+                <li class="header__nav-item">
+                    <a href="#publications" class="header__nav-link">Publications</a>
+                </li>
+                <li class="header__nav-item">
+                    <a href="#contact" class="header__nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

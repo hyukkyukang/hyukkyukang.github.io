@@ -1,0 +1,58 @@
+# Jekyll configuration for academic homepage
+# Built for GitHub Pages deployment
+
+title: "Hyukkyu Kang - Ph.D. Candidate"
+description: "Ph.D. Candidate in the Data Systems Lab at POSTECH, researching Natural Language Processing and Information Retrieval"
+url: "https://hyukkyukang.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+timezone: Asia/Seoul
+
+# Plugins (GitHub Pages whitelist only)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Sass/SCSS settings
+sass:
+  style: compressed
+  sass_dir: assets/css
+
+# Collections and defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+  - "*.gem"
+  - "*.gemspec"
+
+# Include files
+include:
+  - _pages
+
+# Permalink structure
+permalink: pretty
+
+# GitHub Pages specific
+repository: hyukkyukang/hyukkyukang.github.io
+github:
+  is_project_page: false
+  is_user_page: true

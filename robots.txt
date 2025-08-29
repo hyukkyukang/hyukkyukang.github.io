@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://hyukkyukang.github.io/sitemap.xml
+
+# Allow crawling of all content
+# This is an academic homepage meant to be discoverable

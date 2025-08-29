@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  Default layout template for Jekyll academic site
+  Provides HTML shell with landmarks, SEO, and asset loading
+  Used by all pages as base template
+-->
+<html lang="en" class="no-js">
+{% include head.html %}
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Site header with name and navigation -->
+  <header class="site-header" role="banner">
+    {% include header.html %}
+  </header>
+
+  <!-- Main content area -->
+  <main id="main-content" class="main-content" role="main">
+    {{ content }}
+  </main>
+
+  <!-- Site footer -->
+  <footer class="site-footer" role="contentinfo">
+    {% include footer.html %}
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18,15 12,9 6,15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Main JavaScript -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

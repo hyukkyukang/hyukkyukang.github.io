@@ -1,0 +1,39 @@
+<!--
+  Publication item template for rendering individual publications
+  Formats: authors → title (emphasized) → venue (expanded) → year
+  Handles notes and links if present
+-->
+<article class="publication">
+    <div class="publication__content">
+        <!-- Authors -->
+        {% if include.publication.authors %}
+        <p class="publication__authors">{{ include.publication.authors }}</p>
+        {% endif %}
+
+        <!-- Title (emphasized) -->
+        {% if include.publication.title %}
+        <h3 class="publication__title">{{ include.publication.title }}</h3>
+        {% endif %}
+
+        <!-- Venue and year -->
+        <div class="publication__meta">
+            {% if include.publication.venue %}
+            <span class="publication__venue">{{ include.publication.venue }}</span>
+            {% endif %}
+        </div>
+
+        <!-- Notes if present -->
+        {% if include.publication.notes %}
+        <p class="publication__notes">{{ include.publication.notes }}</p>
+        {% endif %}
+
+        <!-- Links if present -->
+        {% if include.publication.links and include.publication.links.size > 0 %}
+        <div class="publication__links">
+            {% for link in include.publication.links %}
+            <a href="{{ link.url }}" class="publication__link" target="_blank" rel="noopener noreferrer"> {{ link.label | default: "Link" }} </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</article>
