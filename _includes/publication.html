@@ -18,7 +18,7 @@
         <!-- Venue and year -->
         <div class="publication__meta">
             {% if include.publication.venue %}
-            <span class="publication__venue">{{ include.publication.venue }}</span>
+            <span class="publication__venue">{{ include.publication.venue }}{% if include.publication.type %} <span class="publication__type-text">({% case include.publication.type %}{% when 'oral' %}Oral Presentation{% when 'highlight' %}Highlight Presentation{% when 'poster' %}Poster Presentation{% else %}{{ include.publication.type | capitalize }} Presentation{% endcase %})</span>{% endif %}</span>
             {% endif %}
         </div>
 

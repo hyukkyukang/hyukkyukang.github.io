@@ -1,0 +1,43 @@
+<!--
+  News section generator
+  Automatically generates news items from work experience and publications
+  Sorts chronologically and displays recent updates
+-->
+{% assign all_news = '' | split: '' %}
+
+{%- comment -%} Collect work experience news (excluding Research Intern) {%- endcomment -%}
+{%- for exp in site.data.site.work_experience -%}
+  {%- if exp.title != 'Research Intern' -%}
+    {%- assign start_str = exp.period | split: ' – ' | first -%}
+    {%- assign sort_key = start_str | date: '%Y%m%d' -%}
+    {%- capture item_html -%}
+      <div class="news-item">
+        <div class="news-item__date">{{ start_str }}</div>
+        <div class="news-item__content"><strong>{{ exp.title }}</strong> at {{ exp.org }}</div>
+      </div>
+    {%- endcapture -%}
+    {%- assign composed = sort_key | append: ':::' | append: item_html -%}
+    {%- assign all_news = all_news | push: composed -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment -%} Collect publication news {%- endcomment -%}
+{%- for pub in site.data.site.publications -%}
+  {%- assign date_str = pub.date | default: pub.year -%}
+  {%- assign sort_key = date_str | date: '%Y%m%d' -%}
+  {%- capture item_html -%}
+    <div class="news-item">
+      <div class="news-item__date">{{ date_str }}</div>
+      <div class="news-item__content">One paper was accepted to {{ pub.venue_short | default: pub.venue }}.</div>
+    </div>
+  {%- endcapture -%}
+  {%- assign composed = sort_key | append: ':::' | append: item_html -%}
+  {%- assign all_news = all_news | push: composed -%}
+{%- endfor -%}
+
+{%- comment -%} Sort and display news items {%- endcomment -%}
+{%- assign sorted_news = all_news | sort | reverse -%}
+{%- for item in sorted_news -%}
+  {%- assign parts = item | split: ':::' -%}
+  {{ parts[1] }}
+{%- endfor -%}

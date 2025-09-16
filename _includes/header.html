@@ -15,12 +15,16 @@
                 <li class="header__nav-item">
                     <a href="#about" class="header__nav-link">About</a>
                 </li>
+                {% if site.data.site.work_experience or site.data.site.publications %}
                 <li class="header__nav-item">
                     <a href="#news" class="header__nav-link">News</a>
                 </li>
+                {% endif %}
+                {% if site.data.site.publications %}
                 <li class="header__nav-item">
                     <a href="#publications" class="header__nav-link">Publications</a>
                 </li>
+                {% endif %}
                 <li class="header__nav-item">
                     <a href="#contact" class="header__nav-link">Contact</a>
                 </li>

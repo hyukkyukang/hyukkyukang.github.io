@@ -392,7 +392,7 @@ time {
     margin: 0 auto;
 }
 
-/* Legacy sidebar styles - removed for single column layout */
+/* Single column layout - no sidebar needed */
 
 /* Content Sections */
 .section {
@@ -496,6 +496,13 @@ time {
     margin-bottom: var(--spacing-xs);
 }
 
+.timeline__degree {
+    color: var(--text-muted);
+    font-weight: normal;
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+}
+
 .timeline__period {
     font-size: var(--font-size-sm);
     color: var(--text-light);
@@ -531,6 +538,7 @@ time {
     align-items: center;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-xs);
+    flex-wrap: wrap;
 }
 
 .publication__venue {
@@ -541,6 +549,12 @@ time {
 .publication__year {
     font-weight: 500;
     color: var(--text-muted);
+}
+
+.publication__type-text {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
 }
 
 .publication__links {
@@ -578,11 +592,15 @@ time {
 .teaching__course {
     margin: 0;
     font-size: var(--font-size-base);
+    color: var(--text);
+    font-weight: 600;
 }
 
 .teaching__term {
     font-size: var(--font-size-sm);
     color: var(--text-muted);
+    flex-shrink: 0;
+    margin-left: var(--spacing-md);
 }
 
 /* Skills */
@@ -725,7 +743,7 @@ time {
     color: var(--text-muted);
 }
 
-/* Remove unused footer link styling */
+/* Footer styling complete */
 
 /* Back to Top Button */
 .back-to-top {
