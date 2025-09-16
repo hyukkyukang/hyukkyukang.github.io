@@ -28,7 +28,7 @@
   {%- capture item_html -%}
     <div class="news-item">
       <div class="news-item__date">{{ date_str }}</div>
-      <div class="news-item__content">One paper was accepted to {{ pub.venue_short | default: pub.venue }}.</div>
+      <div class="news-item__content">One paper was accepted to {% assign venue_display = pub.venue_short | default: pub.venue %}{{ venue_display | replace: '(', '' | replace: ')', '' }}{% if pub.type %} as an {% case pub.type %}{% when 'oral' %}oral presentation{% when 'highlight' %}highlight presentation{% when 'poster' %}poster presentation{% else %}{{ pub.type }} presentation{% endcase %}{% endif %}.</div>
     </div>
   {%- endcapture -%}
   {%- assign composed = sort_key | append: ':::' | append: item_html -%}
