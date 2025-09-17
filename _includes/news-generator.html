@@ -16,7 +16,7 @@ pub.year -%} {%- assign sort_key = date_str | date: '%Y%m%d' -%} {%- capture ite
 <div class="news-item">
     <div class="news-item__date">{{ date_str }}</div>
     <div class="news-item__content">
-        One paper was accepted to {% assign venue_display = pub.venue_short | default: pub.venue %}{{ venue_display | replace: '(', '' | replace: ')', '' }}{%
+        One paper was accepted to {% assign venue_display = pub.venue_short | default: pub.venue %}{% if pub.venue_link %}<a href="{{ pub.venue_link }}" target="_blank" rel="noopener noreferrer">{{ venue_display | replace: '(', '' | replace: ')' }}</a>{% else %}{{ venue_display | replace: '(', '' | replace: ')' }}{% endif %}{%
         if pub.type %} ({% case pub.type %}{% when 'oral' %}Oral Presentation{% when 'highlight' %}Highlight Presentation{% when 'poster' %}Poster
         Presentation{% else %}{{ pub.type | capitalize }} Presentation{% endcase %}){% endif %}
     </div>

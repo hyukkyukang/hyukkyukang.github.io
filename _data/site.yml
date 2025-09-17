@@ -40,6 +40,7 @@ publications:
       title: "TRIAL: Token Relations and Importance Aware Late-interaction for Accurate Text Retrieval"
       venue: "Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP) 2025, Main Conference"
       venue_short: "EMNLP 2025 (Main Conference)"
+      venue_link: "https://2025.emnlp.org"
       year: 2025
       date: "Aug. 2025"
       type: "oral"
