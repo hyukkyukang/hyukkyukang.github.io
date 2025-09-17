@@ -20,7 +20,7 @@ education:
 
 work_experience:
     - title: "Visiting Scholar"
-      org: "Global AI Frontier Lab, New York University"
+      org: '<a href="https://www.nyu.edu/research/research-centers-and-institutes/global-ai-frontier-lab.html">Global AI Frontier Lab</a>, New York University'
       period: "Jan. 2025 – Mar. 2025"
       bullets:
           - 'Collaborated with Prof. Kyunghyun Cho on "Disentangling Reasoning and Knowledge in Retrieval-Augmented Language Models."'
