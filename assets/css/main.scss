@@ -210,6 +210,7 @@ time {
     align-items: center;
     justify-content: space-between;
     gap: var(--spacing-md);
+    min-height: 40px;
 }
 
 .header__title {
@@ -221,6 +222,10 @@ time {
     font-weight: 600;
     margin: 0;
     color: var(--text);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 40px;
 }
 
 .header__nav-list {
@@ -229,6 +234,7 @@ time {
     margin: 0;
     padding: 0;
     gap: var(--spacing-lg);
+    align-items: center;
 }
 
 .header__nav-link {
@@ -236,6 +242,10 @@ time {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
+    padding: 16px 0 8px 0 !important;
+    display: block;
+    line-height: 16px;
+    margin-top: 4px !important;
 }
 
 .header__nav-link:hover {
@@ -311,14 +321,14 @@ time {
     text-decoration: none;
 }
 
-/* Theme Toggle */
+/* Theme Toggle - Simple Icon Button */
 .theme-toggle {
-    background: none;
+    background: transparent;
     border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: var(--spacing-xs);
+    border-radius: 8px;
+    padding: 0;
     cursor: pointer;
-    color: var(--text);
+    color: var(--text-muted);
     transition: var(--transition);
     position: relative;
     width: 40px;
@@ -326,11 +336,13 @@ time {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .theme-toggle:hover {
     background: var(--bg-secondary);
-    border-color: var(--accent);
+    border-color: var(--border);
+    color: var(--text);
 }
 
 .theme-toggle:focus {
@@ -339,19 +351,36 @@ time {
 }
 
 .theme-toggle__icon {
-    transition: var(--transition);
+    transition: all 0.2s ease;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle__icon svg {
+    transition: all 0.2s ease;
 }
 
 .theme-toggle__icon--dark {
-    display: none;
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
 }
 
+.theme-toggle__icon--light {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Dark mode icon states */
 [data-theme="dark"] .theme-toggle__icon--light {
-    display: none;
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
 }
 
 [data-theme="dark"] .theme-toggle__icon--dark {
-    display: block;
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
 }
 
 /* Quick Links */
